@@ -15,6 +15,7 @@
 		DE8EA26919DB35CC0011AB4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8EA26819DB35CC0011AB4B /* Images.xcassets */; };
 		DE8EA26C19DB35CC0011AB4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8EA26A19DB35CC0011AB4B /* LaunchScreen.xib */; };
 		DE8EA27819DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA27719DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m */; };
+		DEC4999119DF1D3700901376 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC4999019DF1D3700901376 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		DE8EA27119DB35CC0011AB4B /* Noah'sFirstGetRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Noah'sFirstGetRequestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8EA27619DB35CC0011AB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8EA27719DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Noah_sFirstGetRequestTests.m; sourceTree = "<group>"; };
+		DEC4998F19DF1D3700901376 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		DEC4999019DF1D3700901376 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				DE89960F19DB47C700F50249 /* Recipe.h */,
 				DE89961019DB47C700F50249 /* Recipe.m */,
 				DE8EA26519DB35CC0011AB4B /* Main.storyboard */,
+				DEC4998F19DF1D3700901376 /* CollectionViewCell.h */,
+				DEC4999019DF1D3700901376 /* CollectionViewCell.m */,
 				DE8EA26819DB35CC0011AB4B /* Images.xcassets */,
 				DE8EA26A19DB35CC0011AB4B /* LaunchScreen.xib */,
 				DE8EA25B19DB35CC0011AB4B /* Supporting Files */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8EA26419DB35CC0011AB4B /* ViewController.m in Sources */,
+				DEC4999119DF1D3700901376 /* CollectionViewCell.m in Sources */,
 				DE8EA26119DB35CC0011AB4B /* AppDelegate.m in Sources */,
 				DE8EA25E19DB35CC0011AB4B /* main.m in Sources */,
 				DE89961119DB47C700F50249 /* Recipe.m in Sources */,

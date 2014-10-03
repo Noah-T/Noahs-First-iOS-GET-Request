@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "Recipe.h"
+#import "CollectionViewCell.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *recipeList;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -45,34 +47,30 @@
 
     ;}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
     return self.recipeList.count;
-    
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     Recipe *recipe = [self.recipeList objectAtIndex:indexPath.row];
-    cell.textLabel.text = recipe.recipeName;
-    NSURL *recipeURL = [NSURL URLWithString:recipe.recipeImageURL];
-    NSData *imageData = [NSData dataWithContentsOfURL:recipeURL];
-    UIImage *image = [UIImage imageWithData:imageData];
     
-    
-    cell.imageView.image = image;
-    
+    cell.recipeLabel.text = recipe.recipeName;
+
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:recipe.recipeImageURL ]];
+    cell.recipeImage.image = [UIImage imageWithData:imageData];
     return cell;
 }
+
 
 
 
