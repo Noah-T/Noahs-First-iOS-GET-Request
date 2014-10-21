@@ -12,5 +12,8 @@
 @interface Recipe : NSObject
 @property (strong, nonatomic) NSString *recipeImageURL;
 @property (strong, nonatomic) NSString *recipeName;
+@property (strong, nonatomic) NSString *recipeId;
+@property (strong, nonatomic) NSData *recipeImageData;
+@property (strong, nonatomic) UIImage *recipeImage;
 
 @end

@@ -8,18 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-@class NATRecipe;
+@class Recipe;
 
 
 @interface NATLargeRecipeViewController : UIViewController <MFMailComposeViewControllerDelegate>
-@property (nonatomic, strong) IBOutlet UILabel *recipeLabel;
-@property (nonatomic, strong) NSString *recipeLabeltext;
-@property (nonatomic, strong) IBOutlet UIImageView *recipeImage;
-@property (nonatomic, strong) UIImage *recipeImageImage;
-@property (nonatomic, strong) NATRecipe *recipe;
+@property (weak, nonatomic) IBOutlet UILabel *recipeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 
-- (IBAction)postToTwitter:(id)sender;
-- (IBAction)postToFacebook:(id)sender;
-- (IBAction)sendEmail:(id)sender;
+@property (nonatomic, strong) NSString *recipeLabeltext;
+
+@property (nonatomic, strong) UIImage *recipeImageImage;
+@property (nonatomic, strong) Recipe *recipe;
+
+//- (IBAction)postToTwitter:(id)sender;
+//- (IBAction)postToFacebook:(id)sender;
+//- (IBAction)sendEmail:(id)sender;
 
 @end

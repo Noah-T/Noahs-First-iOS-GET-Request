@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE5053EA19F5C0DC008AA05E /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5053E919F5C0DC008AA05E /* NATHomeViewController.m */; };
 		DE89961119DB47C700F50249 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = DE89961019DB47C700F50249 /* Recipe.m */; };
 		DE8EA25E19DB35CC0011AB4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA25D19DB35CC0011AB4B /* main.m */; };
 		DE8EA26119DB35CC0011AB4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA26019DB35CC0011AB4B /* AppDelegate.m */; };
-		DE8EA26419DB35CC0011AB4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA26319DB35CC0011AB4B /* ViewController.m */; };
+		DE8EA26419DB35CC0011AB4B /* NATMainRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA26319DB35CC0011AB4B /* NATMainRecipeViewController.m */; };
 		DE8EA26719DB35CC0011AB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8EA26519DB35CC0011AB4B /* Main.storyboard */; };
 		DE8EA26919DB35CC0011AB4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8EA26819DB35CC0011AB4B /* Images.xcassets */; };
 		DE8EA26C19DB35CC0011AB4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8EA26A19DB35CC0011AB4B /* LaunchScreen.xib */; };
 		DE8EA27819DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8EA27719DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m */; };
 		DEC4999119DF1D3700901376 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC4999019DF1D3700901376 /* CollectionViewCell.m */; };
+		DEF91BA619E5D94E00DBD3E6 /* NATLargeRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF91BA519E5D94E00DBD3E6 /* NATLargeRecipeViewController.m */; };
+		DEF91BA919E5D98500DBD3E6 /* NATUserDefaultInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF91BA819E5D98500DBD3E6 /* NATUserDefaultInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE5053E819F5C0DC008AA05E /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
+		DE5053E919F5C0DC008AA05E /* NATHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHomeViewController.m; sourceTree = "<group>"; };
 		DE89960F19DB47C700F50249 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		DE89961019DB47C700F50249 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		DE8EA25819DB35CC0011AB4B /* Noah'sFirstGetRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Noah'sFirstGetRequest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,8 +41,8 @@
 		DE8EA25D19DB35CC0011AB4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE8EA25F19DB35CC0011AB4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE8EA26019DB35CC0011AB4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DE8EA26219DB35CC0011AB4B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DE8EA26319DB35CC0011AB4B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DE8EA26219DB35CC0011AB4B /* NATMainRecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NATMainRecipeViewController.h; sourceTree = "<group>"; };
+		DE8EA26319DB35CC0011AB4B /* NATMainRecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NATMainRecipeViewController.m; sourceTree = "<group>"; };
 		DE8EA26619DB35CC0011AB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8EA26819DB35CC0011AB4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE8EA26B19DB35CC0011AB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,6 +51,10 @@
 		DE8EA27719DB35CC0011AB4B /* Noah_sFirstGetRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Noah_sFirstGetRequestTests.m; sourceTree = "<group>"; };
 		DEC4998F19DF1D3700901376 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		DEC4999019DF1D3700901376 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		DEF91BA419E5D94E00DBD3E6 /* NATLargeRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATLargeRecipeViewController.h; sourceTree = "<group>"; };
+		DEF91BA519E5D94E00DBD3E6 /* NATLargeRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATLargeRecipeViewController.m; sourceTree = "<group>"; };
+		DEF91BA719E5D98500DBD3E6 /* NATUserDefaultInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATUserDefaultInfo.h; sourceTree = "<group>"; };
+		DEF91BA819E5D98500DBD3E6 /* NATUserDefaultInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATUserDefaultInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +96,19 @@
 		DE8EA25A19DB35CC0011AB4B /* Noah'sFirstGetRequest */ = {
 			isa = PBXGroup;
 			children = (
+				DE8EA26519DB35CC0011AB4B /* Main.storyboard */,
+				DE5053E819F5C0DC008AA05E /* NATHomeViewController.h */,
+				DE5053E919F5C0DC008AA05E /* NATHomeViewController.m */,
+				DEF91BA719E5D98500DBD3E6 /* NATUserDefaultInfo.h */,
+				DEF91BA819E5D98500DBD3E6 /* NATUserDefaultInfo.m */,
+				DEF91BA419E5D94E00DBD3E6 /* NATLargeRecipeViewController.h */,
+				DEF91BA519E5D94E00DBD3E6 /* NATLargeRecipeViewController.m */,
 				DE8EA25F19DB35CC0011AB4B /* AppDelegate.h */,
 				DE8EA26019DB35CC0011AB4B /* AppDelegate.m */,
-				DE8EA26219DB35CC0011AB4B /* ViewController.h */,
-				DE8EA26319DB35CC0011AB4B /* ViewController.m */,
+				DE8EA26219DB35CC0011AB4B /* NATMainRecipeViewController.h */,
+				DE8EA26319DB35CC0011AB4B /* NATMainRecipeViewController.m */,
 				DE89960F19DB47C700F50249 /* Recipe.h */,
 				DE89961019DB47C700F50249 /* Recipe.m */,
-				DE8EA26519DB35CC0011AB4B /* Main.storyboard */,
 				DEC4998F19DF1D3700901376 /* CollectionViewCell.h */,
 				DEC4999019DF1D3700901376 /* CollectionViewCell.m */,
 				DE8EA26819DB35CC0011AB4B /* Images.xcassets */,
@@ -229,9 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8EA26419DB35CC0011AB4B /* ViewController.m in Sources */,
+				DEF91BA619E5D94E00DBD3E6 /* NATLargeRecipeViewController.m in Sources */,
+				DE8EA26419DB35CC0011AB4B /* NATMainRecipeViewController.m in Sources */,
 				DEC4999119DF1D3700901376 /* CollectionViewCell.m in Sources */,
 				DE8EA26119DB35CC0011AB4B /* AppDelegate.m in Sources */,
+				DEF91BA919E5D98500DBD3E6 /* NATUserDefaultInfo.m in Sources */,
+				DE5053EA19F5C0DC008AA05E /* NATHomeViewController.m in Sources */,
 				DE8EA25E19DB35CC0011AB4B /* main.m in Sources */,
 				DE89961119DB47C700F50249 /* Recipe.m in Sources */,
 			);
@@ -309,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -344,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -355,7 +373,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = "Noah'sFirstGetRequest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -365,7 +385,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = "Noah'sFirstGetRequest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
