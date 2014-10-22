@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *searchTermArray;
 - (IBAction)optionsButtonPressed:(id)sender;
+@property (strong, nonatomic) UIView *backgroundView;
+@property (strong, nonatomic) NSArray *buttonArray;
 
 @end
 
@@ -25,10 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self searchWithIngredient:@"kale"];
-    [self searchWithIngredient:@"avocado"];
-    [self searchWithIngredient:@"eggs"];
-    [self searchWithIngredient:@"berries"];
-    [self searchWithIngredient:@"oatmeal"];
+    //[self searchWithIngredient:@"avocado"];
+    //[self searchWithIngredient:@"eggs"];
+    //[self searchWithIngredient:@"berries"];
+    //[self searchWithIngredient:@"oatmeal"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -99,15 +101,9 @@
         
         NSError *error;
         NSData *jsonData = [NSData dataWithContentsOfURL:yumlyGetURL];
-        
-        
         NSDictionary *recipeDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-        
-        
-        
-        //NSLog(@"%@", recipeDictionary);
         NSDictionary *matchesList = [recipeDictionary objectForKey:@"matches"];
-        //NSLog(@"These are the matches: \n%@", matchesList);
+
         
         if (!self.recipeList) {
             self.recipeList = [NSMutableArray array];
@@ -115,60 +111,122 @@
         
         for (NSDictionary *recipeDictionary in matchesList) {
             Recipe *recipe = [[Recipe alloc]init];
-            
             recipe.recipeName = [recipeDictionary objectForKey:@"recipeName"];
             recipe.recipeId = [recipeDictionary objectForKey:@"id"];
-            
-            
             recipe.recipeImageURL = [[recipeDictionary objectForKey:@"imageUrlsBySize"]valueForKey:@"90"];
             recipe.recipeImageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:recipe.recipeImageURL ]];
             recipe.recipeImage = [UIImage imageWithData:recipe.recipeImageData];
             
-            
             [self.recipeList addObject:recipe];
         };
         [self.collectionView reloadData];
-        
-        
     });
-    
-    
-    
-    
 }
-
-
-
-
 
 - (IBAction)optionsButtonPressed:(id)sender {
-   
     
     
-    UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(100, 250, 300, 200)];
-    backgroundView.backgroundColor = [UIColor yellowColor];
+    //creation of background view for popover menu
+    self.backgroundView = [[UIView alloc]initWithFrame:CGRectMake(100, 250, 300, 400)];
+    self.backgroundView.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height /2);
+    self.backgroundView.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:self.backgroundView];
     
     
-    NSLayoutConstraint *centering = [NSLayoutConstraint constraintWithItem:backgroundView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
+    //kale button
     
-    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:backgroundView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:200];
+    UIButton *kaleButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [kaleButton setTitle:@"kale" forState:UIControlStateNormal];
+    [kaleButton setImage:[UIImage imageNamed:@"kaleNoCheck"] forState:UIControlStateNormal];
+    [kaleButton setImage:[UIImage imageNamed:@"kaleCheck"] forState:UIControlStateSelected];
+    kaleButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+20) ;
+    [self styleButton:kaleButton];
     
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:backgroundView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
-    [backgroundView addConstraint:height];
-    [backgroundView addConstraint:width];
+    //oatmeal button
+    UIButton *oatmealButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [oatmealButton setTitle:@"oatmeal" forState:UIControlStateNormal];
+    [oatmealButton setImage:[UIImage imageNamed:@"oatmealNoCheck"] forState:UIControlStateNormal];
+    [oatmealButton setImage:[UIImage imageNamed:@"oatmealCheck"] forState:UIControlStateSelected];
+    oatmealButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+80) ;
+    [self styleButton:oatmealButton];
+    
+    //avocado button
+    UIButton *avocadoButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [avocadoButton setTitle:@"avocado" forState:UIControlStateNormal];
+    [avocadoButton setImage:[UIImage imageNamed:@"avocadoNoCheck"] forState:UIControlStateNormal];
+    [avocadoButton setImage:[UIImage imageNamed:@"avocadoCheck"] forState:UIControlStateSelected];
+    avocadoButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+140) ;
+    [self styleButton:avocadoButton];
+    
+    //berries button
+    UIButton *berriesButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [berriesButton setTitle:@"berries" forState:UIControlStateNormal];
+    [berriesButton setImage:[UIImage imageNamed:@"berriesNoCheck"] forState:UIControlStateNormal] ;
+     [berriesButton setImage:[UIImage imageNamed:@"berriesCheck"] forState:UIControlStateSelected];
+    berriesButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+200) ;
+    [self styleButton:berriesButton];
+    
+    //eggs button
+    UIButton *eggsButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [eggsButton setTitle:@"eggs" forState:UIControlStateNormal];
+    [eggsButton setImage:[UIImage imageNamed:@"eggsNoCheck"] forState:UIControlStateNormal];
+    [eggsButton setImage:[UIImage imageNamed:@"eggsCheck"] forState:UIControlStateSelected];
+    eggsButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+260) ;
+    [self styleButton:eggsButton];
+    
+    UIButton *searchButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 290, 60)];
+    [searchButton setTitle:@"Search" forState:UIControlStateNormal];
+    searchButton.center = CGPointMake(self.backgroundView.frame.size.width / 2, (self.backgroundView.frame.size.height - self.backgroundView.frame.size.height)+(kaleButton.frame.size.height/2)+320) ;
+    [searchButton addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+    [searchButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.buttonArray = @[kaleButton, oatmealButton, avocadoButton, berriesButton, eggsButton];
+    [self.backgroundView addSubview:kaleButton];
+    [self.backgroundView addSubview:oatmealButton];
+    [self.backgroundView addSubview:avocadoButton];
+    [self.backgroundView addSubview:berriesButton];
+    [self.backgroundView addSubview:eggsButton];
+    [self.backgroundView addSubview:searchButton];
     
     
-    CGRect buttonFrame = CGRectMake(100, 300, 250, 44);
-    UIButton *kaleButton = [[UIButton alloc]initWithFrame:buttonFrame];
-    [kaleButton setTitle:@"Kale" forState:UIControlStateNormal];
-    
-    UIButton *oatmealButton = [[UIButton alloc]initWithFrame:buttonFrame];
-    [oatmealButton setTitle:@"Oatmeal" forState:UIControlStateNormal];
-    [self.view addSubview:backgroundView];
-    [self.view addConstraint:centering];
-    [self.view addSubview:kaleButton];
-    [self.view addSubview:oatmealButton];
-
 }
+
+-(void)styleButton:(UIButton *)sender
+{
+
+    sender.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [sender addTarget:self action:@selector(filterButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)search
+{
+    self.recipeList = nil;
+    self.searchTermArray = nil;
+    self.searchTermArray = [NSMutableArray array];
+    for (UIButton *button in self.buttonArray) {
+        
+        if ([button isSelected]) {
+            NSLog(@"found a selected button");
+            NSLog(@"button title is: %@", button.currentTitle);
+            [self.searchTermArray addObject:button.currentTitle];
+        }
+    }
+    [self.backgroundView removeFromSuperview];
+    for (NSString *ingredient in self.searchTermArray) {
+        [self searchWithIngredient:ingredient];
+    }
+    [self.collectionView reloadData];
+    NSLog(@"search terms are: %@", self.searchTermArray);
+}
+
+-(void)filterButtonPressed:(UIButton *)sender {
+    NSLog(@"button pressed");
+    if ([sender isSelected]) {
+        [sender setSelected:NO];
+    } else {
+        [sender setSelected:YES];
+    }
+    
+}
+
 
 @end

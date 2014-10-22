@@ -11,6 +11,7 @@
 @interface NATMainRecipeViewController : UIViewController
 <UICollectionViewDataSource, UICollectionViewDelegate>
 
+-(void)styleButton:(UIButton *)button;
 
 @end
 
